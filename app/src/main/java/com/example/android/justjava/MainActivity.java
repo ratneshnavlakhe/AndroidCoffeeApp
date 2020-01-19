@@ -19,7 +19,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        displayPrice(quantity * 5);
+        String priceMessage = "Total: $" + quantity * 5;
+        priceMessage = priceMessage + "\nThank you!";
+        displayMessage(priceMessage);
+    }
+
+    private void displayMessage(String message) {
+        TextView priceTextView = findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 
     public void increment(View view) {
